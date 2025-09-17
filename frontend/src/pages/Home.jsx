@@ -196,7 +196,7 @@ useEffect(() => {
 
 
   return (
-    <div className='w-full h-[100vh] bg-gradient-to-t from-[black] to-[#02023d] flex justify-center items-center flex-col gap-[15px] overflow-hidden'>
+    <div className='w-full h-[100vh] bg-gradient-to-t from-[black] to-[#02023d] flex justify-center items-center flex-col gap-[15px] overflow-hidden pt-[80px]'>
       {/* Usage Instructions */}
       <div className='absolute top-[20px] left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-[12px] rounded-full shadow-lg z-10'>
         <p className='text-[14px] font-medium text-center'>💡 Always use your Assistant's name in each command</p>
@@ -221,14 +221,16 @@ useEffect(() => {
       </div>
       <button className='min-w-[150px] h-[60px] mt-[30px] text-black font-semibold absolute hidden lg:block top-[20px] right-[20px]  bg-white rounded-full cursor-pointer text-[19px] ' onClick={handleLogOut}>Log Out</button>
       <button className='min-w-[150px] h-[60px] mt-[30px] text-black font-semibold  bg-white absolute top-[100px] right-[20px] rounded-full cursor-pointer text-[19px] px-[20px] py-[10px] hidden lg:block ' onClick={()=>navigate("/customize")}>Customize your Assistant</button>
-      <div className='w-[300px] h-[400px] flex justify-center items-center overflow-hidden rounded-4xl shadow-lg'>
-<img src={userData?.assistantImage} alt="" className='h-full object-cover'/>
+      
+      <div className='flex flex-col items-center gap-[15px]'>
+        <div className='w-[300px] h-[400px] flex justify-center items-center overflow-hidden rounded-4xl shadow-lg'>
+          <img src={userData?.assistantImage} alt="" className='h-full object-cover'/>
+        </div>
+        <h1 className='text-white text-[18px] font-semibold'>I'm {userData?.assistantName}</h1>
+        {!aiText && <img src={userImg} alt="" className='w-[200px]'/>}
+        {aiText && <img src={aiImg} alt="" className='w-[200px]'/>}
+        <h1 className='text-white text-[18px] font-semibold text-wrap text-center'>{userText?userText:aiText?aiText:null}</h1>
       </div>
-      <h1 className='text-white text-[18px] font-semibold'>I'm {userData?.assistantName}</h1>
-      {!aiText && <img src={userImg} alt="" className='w-[200px]'/>}
-      {aiText && <img src={aiImg} alt="" className='w-[200px]'/>}
-    
-    <h1 className='text-white text-[18px] font-semibold text-wrap'>{userText?userText:aiText?aiText:null}</h1>
       
     </div>
   )
