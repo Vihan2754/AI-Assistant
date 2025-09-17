@@ -197,6 +197,12 @@ useEffect(() => {
 
   return (
     <div className='w-full h-[100vh] bg-gradient-to-t from-[black] to-[#02023d] flex justify-center items-center flex-col gap-[15px] overflow-hidden'>
+      {/* Usage Instructions */}
+      <div className='absolute top-[20px] left-[20px] bg-black bg-opacity-50 text-white p-[15px] rounded-lg max-w-[300px] z-10'>
+        <h3 className='font-bold text-[16px] mb-[8px]'>Usage Instructions</h3>
+        <p className='text-[14px]'>Always use your Assistant's name in each command that you give to the Assistant.</p>
+      </div>
+
       <CgMenuRight className='lg:hidden text-white absolute top-[20px] right-[20px] w-[25px] h-[25px]' onClick={()=>setHam(true)}/>
       <div className={`absolute lg:hidden top-0 w-full h-full bg-[#00000053] backdrop-blur-lg p-[20px] flex flex-col gap-[20px] items-start ${ham?"translate-x-0":"translate-x-full"} transition-transform`}>
  <RxCross1 className=' text-white absolute top-[20px] right-[20px] w-[25px] h-[25px]' onClick={()=>setHam(false)}/>
